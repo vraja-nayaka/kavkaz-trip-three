@@ -1,5 +1,4 @@
 {
-  "repository": "#",
   "license": "UNLICENSED",
   "scripts": {
     "build": "webpack --config ./bundler/webpack.prod.js",
