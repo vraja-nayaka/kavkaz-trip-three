@@ -1,5 +1,6 @@
 {
   "license": "UNLICENSED",
+  "name": "kavkaz-trip-three",
   "scripts": {
     "build": "webpack --config ./bundler/webpack.prod.js",
     "dev": "webpack serve --config ./bundler/webpack.dev.js"
