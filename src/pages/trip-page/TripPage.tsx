@@ -23,32 +23,32 @@ const store: TripStore[] = [
     link: 1,
   },
   {
+    name: "в город",
+    color: "lightblue",
+    position: [13, -5, 5],
+    url: "/k2.jpg",
+    link: 2,
+  },
+  {
     name: "домой",
     color: "lightblue",
-    position: [10, -15, 10],
-    url: "/k2.jpg",
+    position: [20, 5, -20],
+    url: "/g1.jpg",
+    link: 3,
+  },
+  {
+    name: "внутрь",
+    color: "lightblue",
+    position: [15, 0, 0],
+    url: "/k3.jpg",
     link: 4,
   },
   {
-    name: "outside",
+    name: "заново",
     color: "lightpink",
     position: [10, 0, -15],
     url: "/k4.jpg",
     link: 0,
-  },
-  {
-    name: "inside",
-    color: "lightblue",
-    position: [15, 0, 0],
-    url: "/k3.jpg",
-    link: 2,
-  },
-  {
-    name: "спуститься",
-    color: "lightblue",
-    position: [10, -15, 10],
-    url: "/g1.jpg",
-    link: 3,
   },
 ];
 
@@ -76,7 +76,7 @@ const Dome = ({ name, position, texture, onClick }: DomeProps) => {
             okText="Да"
             cancelText="Нет"
           >
-            <a href="#">{name}</a>
+            <button type='button'>{name}</button>
           </Popconfirm>
         </Html>
       </mesh>
@@ -101,12 +101,18 @@ function Preload() {
     THREE.TextureLoader,
     store.map((entry) => entry.url)
   );
+
+  // TODO: set up eslint
   useEffect(() => maps.forEach(gl.initTexture), [maps]);
   return null;
 }
 
 export const TripPage: React.FC = () => (
-  <Canvas frameloop="demand" camera={{ position: [0, 0, 0.1] }} style={{height: '100vh'}}>
+  <Canvas
+    frameloop="demand"
+    camera={{ position: [0, 0, 0.1] }}
+    style={{ height: "100vh" }}
+  >
     <OrbitControls
       enableZoom={false}
       enablePan={false}

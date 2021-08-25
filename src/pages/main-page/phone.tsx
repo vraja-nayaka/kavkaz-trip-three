@@ -2,10 +2,10 @@ import * as THREE from "three";
 import React, { useEffect } from "react";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import * as dat from "dat.gui";
+import { GUI } from "dat.gui";
 import gsap from "gsap";
 
-export const Phone = () => {
+export const Phone: React.FC = () => {
   useEffect(() => loadPhoneWithClassicTreeJs(), []);
 
   return <canvas className="webgl"></canvas>;
@@ -20,10 +20,10 @@ function loadPhoneWithClassicTreeJs() {
   const alpha = loader.load("/alpha.png");
 
   // Debug
-  const gui = new dat.GUI();
+  const gui = new GUI();
 
   // Canvas
-  const canvas = document.querySelector("canvas.webgl");
+  const canvas = document.querySelector("canvas.webgl") as HTMLCanvasElement;
 
   // Scene
   const scene = new THREE.Scene();
@@ -147,7 +147,7 @@ function loadPhoneWithClassicTreeJs() {
 
   let mouseY = 0;
 
-  function animateTerrain(event) {
+  function animateTerrain(event: MouseEvent) {
     mouseY = event.clientY;
   }
 
@@ -158,8 +158,6 @@ function loadPhoneWithClassicTreeJs() {
 
     plane.rotation.z = 0.5 * elapsedTime;
     plane.material.displacementScale = 0.5 + mouseY * 0.001;
-    // Update Orbital Controls
-    // controls.update()
 
     // Render
     renderer.render(scene, camera);

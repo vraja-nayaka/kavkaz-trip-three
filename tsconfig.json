@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "es2015",
     "lib": [
       "DOM",
       "DOM.Iterable",
@@ -18,9 +18,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "src"
   },
   "include": [
-    "./src"
+    "src"
   ]
 }

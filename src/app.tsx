@@ -2,11 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { MainPage } from "./pages/main-page/MainPage";
 import { TripPage } from "./pages/trip-page/TripPage";
+import { routeNames } from "./routes";
 
-export const routeNames = {
-  main: "/",
-  trip: "/trip",
-};
 
 const App: React.FC = () => {
   return (

@@ -1,8 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { routeNames } from "../../app";
-
-// @ts-ignore
+import { routeNames } from "../../routes";
 import { Phone } from "./phone";
 
 const MainPage: React.FC = () => {
